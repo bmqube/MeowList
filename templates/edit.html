@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h3>Edit</h3>
+<form action="{{ url_for('edit', task_id=task_id) }}" method="post" class="form-inline">
+
+    {{ form.csrf_token }}
+    <div class="form-group mt-3 mr-2">
+        {{ form.name(class="form-control") }}
+    </div>
+        <div class="form-group mt-3 mr-2">
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+
+</form>
+
+{% endblock %}

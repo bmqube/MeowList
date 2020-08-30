@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>Tasks</h1>
+    <ul class="list-group mt-4">
+    {% for task in tasks %}
+        <li class="list-group-item">
+            <h3>{{ task.title }}</h3>
+            <p>was created on {{ task.date }}</p>
+            <hr>
+            <a href="{{ url_for('edit', task_id=task.id) }}" class="btn btn-outline-primary btn-sm">Edit</a>
+            <a href="{{ url_for('delete', task_id=task.id) }}" class="btn btn-outline-danger btn-sm">Delete</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
